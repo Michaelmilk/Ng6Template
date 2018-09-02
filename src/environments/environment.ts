@@ -2,9 +2,16 @@
 // `ng build ---prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
-export const environment = {
-  production: false
-};
+import { environmentDev } from "./environment.dev"
+import { environmentProd } from "./environment.prod"
+
+
+const commonEnv = {
+
+}
+
+export const environment = Object.assign(commonEnv, environmentDev);
+
 
 /*
  * In development mode, for easier debugging, you can ignore zone related error
